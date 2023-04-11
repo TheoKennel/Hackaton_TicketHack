@@ -6,9 +6,10 @@ const Trip = require('../models/trips');
 
 // ajout dans le panier
 router.post('/:id', (req,res)=>{
-    const { _id } = req.params;
-    Trip.findById(_id)
+    const id = req.params.id
+    Trip.findById(id)
     .then(data =>{
+        console.log(data);
         const newCart = new Cart({
             departure: data.departure,
             arrival: data.arrival,
@@ -16,7 +17,9 @@ router.post('/:id', (req,res)=>{
             price: data.price
         })
         .save()
-        .then(res.json({result : true, cart: newCart}))
+        .then(data=>{
+            res.json({result: true, cart: data})
+        })
     })
 })
 
@@ -33,7 +36,8 @@ router.get('/', (req, res)=>{
 
 //supprimer un element du panier
 router.delete('/:id', (req,res)=>{
-    Cart.deleteOne(id)
+    const id = req.params.id
+    Cart.deleteOne({_id: id})
     .then(deleteDoc =>{
         if (deleteDoc.deletedCount > 0) {
             Cart.find().then(data=>{
