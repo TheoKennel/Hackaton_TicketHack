@@ -57,6 +57,10 @@ a{
     height: 92vh;
 }
 
+.titre-container{
+    margin: 50px 0;
+}
+
 .titre-container h2{
     color: white;
     text-align: center;
