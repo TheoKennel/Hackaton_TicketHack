@@ -3,6 +3,10 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+hr{
+    background-color: #50ac94;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -50,4 +54,20 @@ a{
     color: white;
     text-align: center;
     font-size: 30px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.input-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-evenly;
 }
