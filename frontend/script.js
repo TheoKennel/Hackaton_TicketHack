@@ -33,7 +33,7 @@ const rootSearch = document.querySelector('#root-search')
                     // ajout de l'élément
                     rootSearch.appendChild(searchContent);  
                 }       
-            } else {
+            } else  {
                 empty.style.display = 'none'
                 falseDiv.style.display = 'flex'
             }
