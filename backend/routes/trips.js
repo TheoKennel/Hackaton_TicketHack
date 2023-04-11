@@ -5,13 +5,13 @@ const Trips = require('../models/trips');
 const moment = require('moment');
 
 router.get('/', (req,res) => {
-    const { departure, arrival, date } = req.body;
+    const { departure, arrival, date } = req.query;
     const dateDebut = moment(date).startOf('day')
     const dateFin = moment(date).endOf('day')
 
     Trips.find( {
-        departure : { $regex: new RegExp(req.body.departure, "i") },
-        arrival : { $regex: new RegExp(req.body.arrival, "i") },
+        departure : { $regex: new RegExp(departure, "i") },
+        arrival : { $regex: new RegExp(arrival, "i") },
         date : {$gte: dateDebut,
                  $lte: dateFin}// Date à vérifier, (format à modifier soit en back soit en front)
     }).then(data => {

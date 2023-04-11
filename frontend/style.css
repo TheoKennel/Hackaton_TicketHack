@@ -126,6 +126,7 @@ a{
 
 #result-contain{
     align-items: center;
+    overflow-y: scroll;
 }
 
 #trip{
@@ -134,4 +135,34 @@ a{
 
 .false{
     display: none;
+    flex-direction: column;
+}
+
+#root-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 180px;
+    width: 100%;
+}
+
+.root-search_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.root-search_content-button {
+    align-items: center;
+    background-color: #50ac94;
+    border: none;
+    color: #fff;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
 }
