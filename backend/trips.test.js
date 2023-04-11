@@ -5,7 +5,7 @@ const app = require('./app')
 
 it('GET /trips', async () => {
    const res = await request(app).get('/trips')
-    .query({departure: 'Bruxelles', arrival: 'Marseille', date: '2023-04-11T08:22:24.283Z'})
+    .send({departure: 'Bruxelles', arrival: 'Marseille', date: '2023-04-11T08:22:24.283Z'})
 
 
     expect(res.statusCode).toBe(200);
