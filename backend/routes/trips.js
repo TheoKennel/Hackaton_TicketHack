@@ -8,7 +8,7 @@ router.get('/', (req,res) => {
     Trips.find( {
         departure : { $regex: new RegExp(req.body.departure, "i") },
         arrival : { $regex: new RegExp(req.body.arrival, "i") },
-        date 
+        date  // Date à vérifier, (format à modifier soit en back soit en front)
     }).then(data => {
         if(data.length > 0 ) {
             res.json({ result : true, trajet : data})
