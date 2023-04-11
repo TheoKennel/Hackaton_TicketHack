@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', tripsRouter);
+app.use('/trips', tripsRouter);
 app.use('/cart', cartRouter)
 app.use('/booking', bookingRouter)
 
