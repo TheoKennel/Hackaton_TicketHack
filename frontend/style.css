@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.logo a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    color: #50ac94;
+    font-weight: bold;
+}
+
+.cart{
+    margin-right: 15px;
+}
+
+.booking{
+    margin-right: 10px;
+}
+
+#body-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.titre-container h2{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+}
+
+.titre-container h3{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
