@@ -2,25 +2,29 @@ var express = require('express');
 var router = express.Router();
 require('../models/connection')
 const Trips = require('../models/trips');
-const moment = require('moment/moment');
+const moment = require('moment');
 
 router.get('/', (req,res) => {
     const { departure, arrival, date } = req.body;
-    // const dateUtc = moment.utc(date).format('YYYY-MM-DDTHH:mm:ss.SSSZ');
+    const dateDebut = moment(date).startOf('day')
+    const dateFin = moment(date).endOf('day')
+
     Trips.find( {
         departure : { $regex: new RegExp(req.body.departure, "i") },
         arrival : { $regex: new RegExp(req.body.arrival, "i") },
-        date : date // Date à vérifier, (format à modifier soit en back soit en front)
+        date : {$gte: dateDebut,
+                 $lte: dateFin}// Date à vérifier, (format à modifier soit en back soit en front)
     }).then(data => {
-        if(data.length > 0 ) {
+        if(data) {
             res.json({ result : true, trajet : data})
         } else {
             res.json({ result : false, error : "Trajet, not found"})
         }
     })
 })
-
+// StartOf(), endOf()
 
 
 
 module.exports = router;
+
