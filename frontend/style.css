@@ -131,3 +131,7 @@ a{
 #trip{
     text-align: center;
 }
+
+.false{
+    display: none;
+}
