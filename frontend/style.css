@@ -3,11 +3,15 @@
     padding: 0;
     /* height: 100vh;
     width: 100vw; */
+    /* border:2px solid red; */
 }
 
 body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    height: 100%;
+    width: 100%
 }
 
 hr{
@@ -27,6 +31,10 @@ a{
     color: black;
 }
 
+#container {
+    height: 100%;
+    width: 100%;
+}
 .nav{
     display: flex;
     justify-content: space-between;
@@ -41,6 +49,7 @@ a{
     font-weight: bold;
 }
 
+
 .cart{
     margin-right: 15px;
 }
@@ -52,6 +61,7 @@ a{
 #body-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-image: url(images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,12 +88,13 @@ a{
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 350px;
+    width: 50%;
     padding: 25px;
     border-radius: 10px;
 }
 
 #search-contain{
+    width: 25%;
     justify-content: space-between;
 }
 
@@ -95,9 +106,10 @@ a{
 .card-container{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 200px;
-    margin-top: 100px;
-    height: 500px;
+    /* margin-bottom: 200px;
+    margin-top: 100px; */
+    height: 50%;
+    width: 70%;
 }
 
 #departure{
@@ -128,13 +140,74 @@ a{
 
 
 #result-contain{
+    height: 90%;
+    width: 25%;
     align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#result-contain::-webkit-scrollbar {
+    width: 6px;
+    height: 50px;
+  }
+
+  #result-contain::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 15px
 }
 
 #trip{
     text-align: center;
+    margin-top: 40px;
 }
 
 .false{
     display: none;
+    flex-direction: column;
+}
+
+.false > img {
+    width: 50%;
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-bottom: 35px;
+}
+
+ hr {
+    height: 5px;
+    border-color: #50ac94;  
+    border: none;
+}
+
+
+#root-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.root-search_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+
+.root-search_content-button {
+    align-items: center;
+    background-color: #50ac94;
+    border: none;
+    color: #fff;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
 }
