@@ -1,7 +1,7 @@
 fetch("http://localhost:3000/cart")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.result)
+    // console.log(data.result)
     if (data.carts) {
       let total = 0;
       const containerBody = document.querySelector(".container__bookings-trips-content");
