@@ -26,7 +26,8 @@ router.post('/', (req,res)=>{
 //affichage panier
 router.get('/', (req, res)=>{
     Cart.find().then(data=>{
-        if (!data) {
+        console.log(data)
+        if (!data[0]) {
             res.json({result : false})
         }else{
             res.json({result: true, carts : data})
