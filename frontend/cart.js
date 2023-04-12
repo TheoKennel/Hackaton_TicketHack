@@ -1,7 +1,7 @@
 fetch("http://localhost:3000/cart")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.carts)
+    console.log(data.result)
     if (data.carts) {
       let total = 0;
       const containerBody = document.querySelector(".container__bookings-trips-content");
@@ -19,19 +19,23 @@ fetch("http://localhost:3000/cart")
                       <p>${data.carts[i].departure} > ${data.carts[i].arrival}</p>
                       <p>${hour}:${minute}</p>
                       <p>${data.carts[i].price}€</p>
-                      <button class="root-search_content-button" value= ${data.carts[i]._id}>Book</button>
+                      <button class="root-search_content-button" value= ${data.carts[i]._id}>X</button>
                   `;
                   containerBody.appendChild(bookingsTrips);
 
                   total+=data.carts[i].price;
       }
-      const containerBooking = document.querySelector(".container__bookings")
+      const containerBooking = document.querySelector("#container__bookings")
       const footerBooking = document.createElement("div");
       footerBooking.classList.add("container__bookings-footer")
-      containerBooking.innerHTML = `<p>Total : 127€</p>
+      footerBooking.innerHTML = `<p>Total : ${total}€</p>
       <button>Purchase</button>`;
       containerBooking.appendChild(footerBooking);
     }else{
-
+        console.log('ya R')
+       const removeBooking = document.querySelector('.container__bookings-remove');
+       removeBooking.style.display = "none";
+       const noTrips = document.querySelector(".container__bookings-notrips");
+       noTrips.style.display = "flex";
     }
   });
