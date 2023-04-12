@@ -51,4 +51,12 @@ router.delete('/:id', (req,res)=>{
 })
 
 
+//supprimer tout le panier
+router.delete('/', (req, res) =>{
+    Cart.deleteMany({})
+    .then(()=>{
+        res.json({result: true})
+    })
+})
+
 module.exports = router;
