@@ -240,6 +240,12 @@ a{
     border-radius: 10px;
 }
 
+.container__bookings-trips-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
 .container__bookings-remove {
     display: flex;
