@@ -308,3 +308,20 @@ a{
 .container__bookings-footer > p {
     color: #fff;
 }
+
+.container__bookings-notrips {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 500;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.container__bookings-notrips > p {
+    padding: 15px;
+    font-weight:500 ;
+}
+/* Booking HTML Css */
+
