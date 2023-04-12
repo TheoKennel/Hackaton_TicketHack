@@ -1,7 +1,11 @@
 fetch("http://localhost:3000/cart")
   .then((response) => response.json())
   .then((data) => {
+<<<<<<< HEAD
     // console.log(data.result)
+=======
+    console.log(data.carts)
+>>>>>>> 79c08e7d4b34f3256b935b603309bb8c2416b9dd
     if (data.carts) {
       let total = 0;
       const containerBody = document.querySelector(".container__bookings-trips-content");
@@ -32,7 +36,6 @@ fetch("http://localhost:3000/cart")
       <button>Purchase</button>`;
       containerBooking.appendChild(footerBooking);
     }else{
-        console.log('ya R')
        const removeBooking = document.querySelector('.container__bookings-remove');
        removeBooking.style.display = "none";
        const noTrips = document.querySelector(".container__bookings-notrips");
