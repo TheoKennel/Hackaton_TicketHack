@@ -31,7 +31,8 @@ router.post('/', (req,res)=> {
                 .then(data=>{
                     let dataTabl = []
                     dataTabl.push(data)})
-            }               
+            } 
+            res.json({ result: true })              
         }
         })
     })
