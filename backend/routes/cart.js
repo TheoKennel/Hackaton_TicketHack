@@ -5,8 +5,8 @@ const Trip = require('../models/trips');
 
 
 // ajout dans le panier
-router.post('/:id', (req,res)=>{
-    const id = req.params.id
+router.post('/', (req,res)=>{
+    const id = req.body.id
     Trip.findById(id)
     .then(data =>{
         console.log(data);

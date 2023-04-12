@@ -21,7 +21,8 @@ hr{
 input{
     background-color: rgba(128, 128, 128, 0.185);
     border: none;
-    height: 30px;
+    height: 50px;
+    padding-left: 10px;
     border-radius: 5px;
 }
 
@@ -120,14 +121,14 @@ a{
 }
 
 #date{
-    width: 250px;
+    width: 100%;
 }
 
 .btn-search{
     cursor: pointer;
 }
 
-#btnSearch{
+.btn{
     background-color: #50ac94;
     color: white;
     text-transform: uppercase;
@@ -135,6 +136,8 @@ a{
     border-radius: 10px;
     text-align: center;
 }
+
+
 
 #result-contain{
     height: 90%;
