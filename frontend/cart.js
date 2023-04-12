@@ -27,6 +27,7 @@ fetch("http://localhost:3000/cart")
                   containerBody.appendChild(bookingsTrips);
 
                   total+=data.carts[i].price;
+
       }
       const containerBooking = document.querySelector("#container__bookings")
       const footerBooking = document.createElement("div");
@@ -47,12 +48,7 @@ fetch("http://localhost:3000/cart")
         })
         .then(response=>response.json)
         .then( ()=>{
-           const calcul = document.querySelectorAll('.price')
-           let newTotal = 0;
-            for (let i = 0; i < calcul.length; i++) {
-                newTotal += Number(calcul[i].textContent) 
-            }
-            total = newTotal;
+          Carts();
         })
         })
         
