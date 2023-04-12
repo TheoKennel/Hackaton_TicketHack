@@ -1,3 +1,4 @@
+
 function Carts() {
   const containerBody = document.querySelector(
     ".container__bookings-trips-content"
@@ -6,6 +7,7 @@ function Carts() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data.carts);
+      containerBody.innerHTML='';
       if (data.carts) {
         let total = 0;
 
@@ -33,7 +35,7 @@ function Carts() {
         const footerBooking = document.createElement("div");
         footerBooking.classList.add("container__bookings-footer");
         footerBooking.innerHTML = `<p>Total : ${total}€</p>
-      <button>Purchase</button>`;
+      <button id="purchase">Purchase</button>`;
         containerBooking.appendChild(footerBooking);
         // suppression du panier
 
@@ -53,6 +55,26 @@ function Carts() {
               });
           });
         }
+        const btnPurchase = document.querySelector('#purchase')
+        btnPurchase.addEventListener('click', function(){
+          console.log('dfg')
+            fetch('http://localhost:3000/booking', {
+            method: 'POST',
+		        headers: { 'Content-Type': 'application/json' },
+          })
+            .then(response => response.json())
+            .then((data) => {
+              console.log(data)
+              fetch('http://localhost:3000/cart', {
+              method: "DELETE",
+              headers: { "Content-Type": "application/json" },
+            })
+            .then(response => response.json())
+            .then(() => {
+              document.location.href='Bookings.html'
+            })
+            })
+            })
       } else {
         const removeBooking = document.querySelector(
           ".container__bookings-remove"
@@ -62,7 +84,8 @@ function Carts() {
         noTrips.style.display = "flex";
       }
     });
-  containerBody.innerHTML='';
 }
 
 Carts();
+
+
