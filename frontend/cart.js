@@ -1,4 +1,4 @@
-
+function Carts(){
 fetch("http://localhost:3000/cart")
   .then((response) => response.json())
   .then((data) => {
@@ -27,6 +27,7 @@ fetch("http://localhost:3000/cart")
                   containerBody.appendChild(bookingsTrips);
 
                   total+=data.carts[i].price;
+
       }
       const containerBooking = document.querySelector("#container__bookings")
       const footerBooking = document.createElement("div");
@@ -39,30 +40,25 @@ fetch("http://localhost:3000/cart")
       const btnDel = document.querySelectorAll(".root-search_content-button");
       console.log(btnDel)
       
-      // for (let i = 0; i < btnDel.length; i++) {
-      //   btnDel[i].addEventListener('click', function(){
-      //       fetch(`http://localhost:3000/cart/${btnDel[i].value}`,{
-      //       method: 'DELETE',
-      //       headers: { 'Content-Type': 'application/json' },
-      //   })
-      //   .then(response=>response.json)
-      //   .then( ()=>{
-      //      const calcul = document.querySelectorAll('.price')
-      //      let newTotal = 0;
-      //       for (let i = 0; i < calcul.length; i++) {
-      //           newTotal += Number(calcul[i].textContent) 
-      //       }
-      //       total = newTotal;
-      //   })
-      //   })
+      for (let i = 0; i < btnDel.length; i++) {
+        btnDel[i].addEventListener('click', function(){
+            fetch(`http://localhost:3000/cart/${btnDel[i].value}`,{
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(response=>response.json)
+        .then( ()=>{
+          Carts();
+        })
+        })
         
-      // }
+      }
     }else{
        const removeBooking = document.querySelector('.container__bookings-remove');
        removeBooking.style.display = "none";
        const noTrips = document.querySelector(".container__bookings-notrips");
        noTrips.style.display = "flex";
     }
-  })
+  })};
 
-
+    Carts()
