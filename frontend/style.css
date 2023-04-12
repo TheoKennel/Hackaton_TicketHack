@@ -234,7 +234,7 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 33%;
+    /* height: 33%; */
     width: 60%;
     background-color: #fff;
     border-radius: 10px;
@@ -251,8 +251,10 @@ a{
 }
 
 .container__bookings-remove > h3 {
-       margin: auto;
+       margin-top: 30px;
+       margin-bottom: 30px;
        font-weight: 500;
+
 }
 
 .container__bookings-trips {
@@ -282,7 +284,9 @@ a{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 28%;
+    height: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
     border-bottom-left-radius:  10px;
     border-bottom-right-radius: 10px;
     background-color: rgb(13, 13, 57);
