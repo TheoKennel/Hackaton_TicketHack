@@ -176,7 +176,7 @@ a{
 }
 
  hr {
-    height: 5px;
+    height: 2px;
     border-color: #50ac94;  
     border: none;
 }
@@ -270,6 +270,8 @@ a{
     font-weight: 500;
 }
 
+
+
 .container__bookings-trips > button{
     padding: 8px;
     background-color: #50ac94;
@@ -325,3 +327,24 @@ a{
 }
 /* Booking HTML Css */
 
+.container__booking-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 19px;
+    margin-bottom: 15px;
+
+}
+
+.container__booking-footer-hr {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: 2px;
+}
+
+.container__booking-footer > p {
+        margin-top: 15px;
+        color: #50ac94;
+        font-size: 20px;
+}
